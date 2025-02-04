@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import "../index.css";
 
 const Header = ({ onAddTask }) => {
@@ -36,6 +37,10 @@ const Header = ({ onAddTask }) => {
             </button>
         </form>
     );
+};
+
+Header.propTypes = {
+    onAddTask: PropTypes.func.isRequired,
 };
 
 export default Header;

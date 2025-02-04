@@ -40,3 +40,23 @@ body {
     background-color: #c2a4e9;
     cursor: pointer;
 }
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.task-item strong {
+    font-size: 18px;
+}
+
+.task-item small {
+    color: #888;
+}
