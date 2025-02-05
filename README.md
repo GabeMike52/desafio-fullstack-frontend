@@ -1,8 +1,32 @@
-# React + Vite
+# Desafio Fullstack Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend do desafio fullstack, onde temos uma lista de tarefas. As tarefas podem ser adicionadas e salvas no banco de dados (PostgreSQL).
 
-Currently, two official plugins are available:
+## Como baixar o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clonar o repositório na sua máquina
+
+```console
+git clone https://github.com/GabeMike52/desafio-fullstack-frontend.git
+cd desafio-fullstack-frontend
+```
+
+2. Instalar as dependências do projeto
+
+```console
+#Dentro da pasta principal do projeto (ver passo anterior)
+npm install
+```
+
+## Como executar o Projeto
+
+1. Executar o comando para iniciar o projeto
+
+```console
+npm run dev
+```
+
+2. Abrir a página na URL http://localhost:5173/
+
+> [!NOTE]
+> Para o funcionamento correto do frontend, o backend deve estar rodando em sua máquina.
