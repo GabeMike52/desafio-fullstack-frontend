@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify"
+import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import Header from "./components/Header";
 import TaskList from "./components/TaskList";
@@ -7,7 +7,7 @@ import TaskList from "./components/TaskList";
 const App = () => {
     const [tasks, setTasks] = useState([]);
 
-    const notify = (message) => toast(message);
+    const notify = (message) => toast.success(message);
 
     const getTasks = async () => {
         try {
@@ -37,6 +37,7 @@ const App = () => {
         <>
             <Header onAddTask={addTask} />
             <TaskList tasks={tasks} />
+            <ToastContainer />
         </>
     );
 };
