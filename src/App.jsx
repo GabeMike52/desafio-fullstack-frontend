@@ -5,13 +5,32 @@ import Header from "./components/Header";
 import TaskList from "./components/TaskList";
 
 const App = () => {
+    const uri = "http://localhost:3600/tarefas";
+    const customToastId = "custom-id";
+
     const [tasks, setTasks] = useState([]);
 
-    const notify = (message) => toast.success(message);
+    const successToast = (message) =>
+        toast.success(message, {
+            theme: "colored",
+            closeButton: false,
+            closeOnClick: true,
+        });
+
+    const noTaskToast = () =>
+        toast.error("Nenhuma tarefa encontrada!", {
+            theme: "colored",
+            closeButton: false,
+            closeOnClick: true,
+            toastId: customToastId,
+        });
 
     const getTasks = async () => {
         try {
-            const response = await axios.get("http://localhost:3600/tarefas");
+            const response = await axios.get(uri);
+            if (response.data.length === 0) {
+                noTaskToast();
+            }
             setTasks(response.data);
         } catch (error) {
             console.error("Erro ao buscar as tarefas: ", error);
@@ -20,10 +39,10 @@ const App = () => {
 
     const addTask = async (title) => {
         try {
-            const response = await axios.post("http://localhost:3600/tarefas", { title });
+            const response = await axios.post(uri, { title });
             setTasks([...tasks, response.data.task]);
             const message = response.data.message;
-            notify(message);
+            successToast(message);
         } catch (error) {
             console.error("Erro ao criar tarefa: ", error);
         }

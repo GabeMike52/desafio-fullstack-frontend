@@ -5,7 +5,7 @@ const TaskList = ({ tasks }) => {
     return (
         <div className="task-list">
             {tasks.length === 0 ? (
-                <p>Nenhuma tarefa adicionada</p>
+                <p>Nenhuma tarefa encontrada!</p>
             ) : (
                 <ul>
                     {tasks.map((task) => (

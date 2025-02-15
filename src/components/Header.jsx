@@ -1,9 +1,17 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import "../index.css";
+import { toast } from "react-toastify";
 
 const Header = ({ onAddTask }) => {
     const [taskTitle, setTaskTitle] = useState("");
+
+    const notify = () =>
+        toast.warn("Por favor, insira um título para a tarefa", {
+            theme: "colored",
+            closeButton: false,
+            closeOnClick: true,
+        });
 
     const handleInputChange = (e) => {
         setTaskTitle(e.target.value);
@@ -12,7 +20,7 @@ const Header = ({ onAddTask }) => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         if (taskTitle.trim() === "") {
-            alert("Por favor, insira um título para a tarefa!");
+            notify();
             return;
         }
 
